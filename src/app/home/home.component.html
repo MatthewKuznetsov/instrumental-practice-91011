@@ -1,5 +1,13 @@
 <div class="home-wr">
-  <button (click)="signOut()">Sign out</button>
+  <div class="header">
+    <div class="menu">
+      <a [routerLink]="['/blog']">Blog</a>
+      <a [routerLink]="['/contacts']">Contacts</a>
+    </div>
+    <div class="signout">
+      <button (click)="signOut()">Sign out</button>
+    </div>
+  </div>
   <h1>Here is my awesome project</h1>
   <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
     для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и

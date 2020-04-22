@@ -1,1 +1,12 @@
-blog page
+<div class="blog-wrapper">
+  <div class="header">
+    <div class="menu">
+      <a [routerLink]="['/']">Home</a>
+      <a [routerLink]="['/contacts']">Contacts</a>
+    </div>
+    <div class="signout">
+      <button (click)="signOut()">Sign out</button>
+    </div>
+  </div>
+  <h2>Blog</h2>
+</div>
