@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #111111;
+}
+body, input, button, a, select, option, textarea {
+  font-family: "Courier New", Courier, monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, textarea, select, option {
+  width: 100%;
+}
+
+input, textarea, button {
+  background-color: #ffffff;
+  padding: 8px 12px 5px 12px;
+  border: 1px solid #7e7e7e;
+  border-radius: 2px
+}

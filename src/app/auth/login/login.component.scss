@@ -1,0 +1,33 @@
+.login-wr {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin-bottom: 10px
+}
+
+.error {
+  margin-top: 0;
+  color: #d34b21
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px
+}
+
+.form {
+  max-width: 300px;
+  width: 100%;
+  padding: 20px 15px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

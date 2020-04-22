@@ -1,0 +1,12 @@
+<div class="login-wr">
+  <div class="form" [formGroup]="form">
+    <h2>Authorization</h2>
+    <p class="error" *ngIf="error">{{ error.message }}</p>
+    <input type="text" name="login" formControlName="login" placeholder="Login">
+    <input type="password" name="password" formControlName="password" placeholder="Password">
+    <div class="controls">
+      <button [routerLink]="['/signup']">Registration</button>
+      <button class="submit" (click)="logIn()">Sign in!</button>
+    </div>
+  </div>
+</div>
