@@ -4,9 +4,28 @@
       <a [routerLink]="['/']">Home</a>
       <a [routerLink]="['/contacts']">Contacts</a>
     </div>
-    <div class="signout">
+    <div class="right-menu">
+      <button (click)="openForm()">Create post</button>
       <button (click)="signOut()">Sign out</button>
     </div>
   </div>
   <h2>Blog</h2>
+  <div class="posts" *ngIf="posts$ | async as posts">
+    <div class="post" *ngFor="let post of posts">
+      <h3>{{ post.tytle }}</h3>
+      <p>{{ post.text }}</p>
+    </div>
+  </div>
+  <div class="add-post" *ngIf="formIsOpened">
+    <div class="form" [formGroup]="form">
+      <h2>App post</h2>
+      <p class="error" *ngIf="error">{{ error.message }}</p>
+      <input type="text" name="tytle" formControlName="tytle" placeholder="Tytle">
+      <textarea rows="10" name="text" formControlName="text" placeholder="Login"></textarea>
+      <div class="controls">
+        <button (click)="closeForm()">Close</button>
+        <button class="submit" (click)="addPost()">Submit</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DataService } from '../data.service';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { LocalStorageService } from '../local-storage.service';
 import { Router } from '@angular/router';
+import { baseURL } from '../data/config';
 
 export interface IUser {
   id: string;
@@ -22,7 +22,6 @@ export class AuthService {
 
   constructor(
     private _http: HttpClient,
-    private _dataService: DataService,
     private _localStorageService: LocalStorageService,
     private _router: Router
   ) {
@@ -44,7 +43,7 @@ export class AuthService {
     password: string
   ): Observable<boolean> {
     return this._http.post(
-      `${this._dataService.baseURL}auth`,
+      `${baseURL}auth`,
       { login, password },
       { observe: 'response' }
     ).pipe(
@@ -75,7 +74,7 @@ export class AuthService {
     name: string
   ) {
     return this._http.post(
-      `${this._dataService.baseURL}signup`,
+      `${baseURL}signup`,
       { login, password, name },
       { observe: 'response' }
     ).pipe(
